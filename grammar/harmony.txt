@@ -1,0 +1,209 @@
+﻿#Gramática para geração de melodias harmônicas
+#
+#Integrantes:
+#	Eduardo Guerra		260267
+#	Eduarda Trindade	274709
+#	Bruno Thomé		260707
+#	Lucas Alves		231074
+#
+#
+# Para representar acordes sustenidos, será usado o caractere 'h'. Para bemol, '/'.
+#
+Terminais
+[ a ]
+[ a/ch ]
+[ am ]
+[ b ]
+[ b/dh ]
+[ bb ]
+[ bm ]
+[ c ]
+[ c/e/ ]
+[ chm ]
+[ d ]
+[ d/fh ]
+[ dh ]
+[ dm ]
+[ e ]
+[ e/gh ]
+[ em ]
+[ f ]
+[ fh ]
+[ fh/b ]
+[ fhm ]
+[ g ]
+[ g/b ]
+[ gh ]
+[ ghm ]
+[ gm ]
+#
+#
+Variaveis
+[ START ]
+#
+[ A ]
+[ B ]
+[ C ]
+[ D ]
+[ E ]
+[ F ]
+[ G ]
+#
+[ TA ]
+[ TB ]
+[ TC ]
+[ TD ]
+[ TE ]
+[ TF ]
+[ TG ]
+#
+[ DA ]
+[ DB ]
+[ DC ]
+[ DD ]
+[ DE ]
+[ DF ]
+[ DG ]
+#
+[ SA ]
+[ SB ]
+[ SC ]
+[ SD ]
+[ SE ]
+[ SF ]
+[ SG ]
+#
+#
+Inicial
+[ START ]
+#
+#
+Regras
+[ START ] > [ TA ]
+[ START ] > [ TB ]
+[ START ] > [ TC ]
+[ START ] > [ TD ]
+[ START ] > [ TE ]
+[ START ] > [ TF ]
+[ START ] > [ TG ]
+#
+[ A ] > [ SA ] [ TA ]
+[ A ] > [ DA ] [ TA ]
+[ A ] > [ TA ]
+[ A ] > [ SA ] [ DA ] [ A ]
+[ A ] > [ SA ] [ A ]
+[ A ] > [ DA ] [ A ]
+#
+[ B ] > [ SB ] [ TB ]
+[ B ] > [ DB ] [ TB ]
+[ B ] > [ TB ]
+[ B ] > [ SB ] [ DB ] [ B ]
+[ B ] > [ SB ] [ B ]
+[ B ] > [ DB ] [ B ]
+#
+[ C ] > [ SC ] [ TC ] [ C ]
+[ C ] > [ DC ] [ TC ] [ C ]
+[ C ] > [ SC ] [ DD ] [ C ]
+[ C ] > [ TC ]
+[ C ] > [ SC ] [ C ]
+[ C ] > [ DD ] [ C ]
+#
+[ D ] > [ SD ] [ TD ]
+[ D ] > [ DD ] [ TD ]
+[ D ] > [ TD ]
+[ D ] > [ SD ] [ DD ] [ D ]
+[ D ] > [ SD ] [ D ]
+[ D ] > [ DD ] [ D ]
+#
+[ E ] > [ SE ] [ TE ]
+[ E ] > [ DE ] [ TE ]
+[ E ] > [ TE ]
+[ E ] > [ SE ] [ DE ] [ E ]
+[ E ] > [ SE ] [ E ]
+[ E ] > [ DE ] [ E ]
+#
+[ F ] > [ SF ] [ TF ]
+[ F ] > [ DF ] [ TF ]
+[ F ] > [ TF ]
+[ F ] > [ SF ] [ DF ] [ F ]
+[ F ] > [ SF ] [ F ]
+[ F ] > [ DF ] [ F ]
+#
+[ G ] > [ SA ] [ TG ]
+[ G ] > [ DG ] [ TG ]
+[ G ] > [ TG ]
+[ G ] > [ SG ] [ DG ] [ G ]
+[ G ] > [ SG ] [ G ]
+[ G ] > [ DG ] [ G ]
+#
+[ TA ] > [ a ] [ A ]
+[ TA ] > [ chm ] [ A ]
+[ TA ] > [ fhm ] [ A ]
+#
+[ TB ] > [ b ] [ B ]
+[ TB ] > [ dh ] [ B ]
+[ TB ] > [ gh ] [ B ]
+#
+[ TC ] > [ c ] [ C ]
+[ TC ] > [ em ] [ C ]
+[ TC ] > [ am ] [ C ]
+#
+[ TD ] > [ d ] [ D ]
+[ TD ] > [ fhm ] [ D ]
+[ TD ] > [ bm ] [ D ]
+#
+[ TE ] > [ e ] [ E ]
+[ TE ] > [ ghm ] [ E ]
+[ TE ] > [ chm ] [ E ]
+#
+[ TF ] > [ f ] [ F ]
+[ TF ] > [ am ] [ F ]
+[ TF ] > [ dm ] [ F ]
+#
+[ TG ] > [ g ] [ G ]
+[ TG ] > [ bm ] [ G ]
+[ TG ] > [ em ] [ G ]
+#
+[ DA ] > [ e ]
+[ DA ] > [ e/gh ]
+#
+[ DB ] > [ fh ]
+[ DB ] > [ fh/b ]
+#
+[ DC ] > [ g ]
+[ DC ] > [ g/b ]
+#
+[ DD ] > [ a ]
+[ DD ] > [ a/ch ]
+#
+[ DE ] > [ b ]
+[ DE ] > [ b/dh ]
+#
+[ DF ] > [ c ]
+[ DF ] > [ c/e/ ]
+#
+[ DG ] > [ d ]
+[ DG ] > [ d/fh ]
+#
+[ SA ] > [ bm ]
+[ SA ] > [ d ]
+#
+[ SB ] > [ chm ]
+[ SB ] > [ e ]
+#
+[ SC ] > [ dm ]
+[ SC ] > [ f ]
+#
+[ SD ] > [ em ]
+[ SD ] > [ g ]
+#
+[ SE ] > [ fhm ]
+[ SE ] > [ a ]
+#
+[ SF ] > [ gm ]
+[ SF ] > [ bb ]
+#
+[ SG ] > [ am ]
+[ SG ] > [ c ]
+#
+#eof
