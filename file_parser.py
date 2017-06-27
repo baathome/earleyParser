@@ -23,6 +23,12 @@ class Grammar:
 				return index
 		return -1
 
+	def isterminal(self, x):
+		"Retorna true se x for terminal, false se x for variavel, idealmente"
+		if x in self.terminals:
+			return True
+		return False
+
 	def print(self):
 		"Imprime valores da gramatica"
 		print("Terminals:")
@@ -42,17 +48,14 @@ class Grammar:
 				print(prod)
 
 
-def readfile(file):
-	"Le conteudo de file e retorna o conteudo ou false, caso o arquivo nao exista"
+
+def parse(file):
+	"Converte o conteudo do arquivo em Grammar e retorna o objeto"
 	if not os.path.isfile(file):
 		return False
 	with open(file, encoding='utf-8') as f:
-		return f.read().split('\n')
+		content = f.read().split('\n')
 
-def parse(content):
-	"Converte o conteudo do arquivo em Grammar e retorna o objeto"
-	if not content: #readfile retornou falso
-		return False
 	grammar = Grammar()
 	for i in range(0, len(content)):
 		line = content[i]
@@ -102,6 +105,4 @@ def parse(content):
 					i += 1
 				i -= 1
 
-	grammar.print()
-
-parse(readfile('grammar/harmony.txt'))
+	return grammar

@@ -1,0 +1,62 @@
+﻿﻿#Gramática para geração de melodias harmônicas
+#
+#Integrantes:
+#	Eduardo Guerra		260267
+#	Eduarda Trindade	274709
+#	Bruno Thomé		260707
+#	Lucas Alves		231074
+#
+#
+# Para representar acordes sustenidos, será usado o caractere 'h'. Para bemol, '/'.
+#
+Terminais
+[ a ]
+[ a/ch ]
+[ am ]
+[ b ]
+[ b/dh ]
+[ bb ]
+[ bm ]
+[ c ]
+[ c/e/ ]
+[ chm ]
+[ d ]
+[ d/fh ]
+[ dh ]
+[ dm ]
+[ e ]
+[ e/gh ]
+[ em ]
+[ f ]
+[ fh ]
+[ fh/b ]
+[ fhm ]
+[ g ]
+[ g/b ]
+[ gh ]
+[ ghm ]
+[ gm ]
+#
+#
+Variaveis
+[ START ]
+[ TA ]
+[ TB ]
+#
+Inicial
+[ START ]
+#
+#
+Regras
+[ START ] > [ TA ]
+[ START ] > [ TB ]
+#
+[ TA ] > [ a ] [ TB ]
+[ TA ] > [ chm ] [ TB ]
+[ TA ] > [ fhm ] [ TB ]
+#
+[ TB ] > [ b ] [ c ]
+[ TB ] > [ dh ] [ a ]
+[ TB ] > [ gh ] [ gh ]
+#
+#eof
